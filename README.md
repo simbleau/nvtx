@@ -1,6 +1,6 @@
 # nvtx-rs
 [![dependency status](https://deps.rs/repo/github/simbleau/nvtx-rs/status.svg)](https://deps.rs/repo/github/simbleau/nvtx-rs)
-[![Build Status](https://travis-ci.com/simbleau/nvtx-rs.svg?branch=main)](https://travis-ci.com/simbleau/nvtx-rs) 
+[![Build Status](https://travis-ci.org/simbleau/nvtx-rs.svg?branch=main)](https://travis-ci.com/simbleau/nvtx-rs)
 
 An safe rust wrapper for the NVIDIA® Tools Extension SDK (NVTX). \
 More information on NVTX can be found via doxygen [here](https://nvidia.github.io/NVTX/doxygen/index.html).
@@ -14,10 +14,17 @@ The intent is wrap this library safely and in "rust" fashion to have a proper li
 # Sections
 
 * [Motivation](#motivation)
+* [Getting Started](#getting-started)
 * [State](#state)
 * [FAQ](#faq)
 * [Contributing](#contributing)
 * [License](#license)
+
+# Getting Started
+
+![Screenshot from 2021-05-23 21-42-13](https://user-images.githubusercontent.com/48108917/119344101-3d3c1a80-bc65-11eb-876e-d5839659c453.png)
+
+There are several examples in the [example folder](https://github.com/simbleau/nvtx-rs/tree/main/examples) which can be run systems such as NVIDIA NSight Systems. If you run the application `cargo run --example hello_world` in NVIDIA NSight Systems, you should see the NVTX layer with a range pushed that says "Hello World!". Most examples are straight forward and provide documentation in the file.
 
 ## State
 
@@ -31,7 +38,7 @@ Don't hesitate to [file an issue](https://github.com/simbleau/nvtx-rs/issues/new
 
 ## Contributing
 
-I encourage all contributions and pull requests. A great place to start would be binding more functions and wrapping them in a safe way. FFI is tricky, and be aware that there are several inline functions in the NVTX header files. This makes converting them automatically more difficult. If you have a good way to do it, I'd love to see it! I ended up going the manual route since it seemed too difficult.
+I encourage all contributions by pull request. A great place to start would be binding more functions and wrapping them in a safe way. I will not accept unsafe functionality unless truly required. FFI handling is tricky, and be aware that there are several inline functions in the NVTX header files. This makes converting them automatically (with tools such as bindgen) more difficult. If you have a good way to do it, I'd love to see it! I ended up going the manual translation route automatic binding was troublesome.
 
 The [Rust code of conduct](https://www.rust-lang.org/policies/code-of-conduct) applies.
 
