@@ -1,3 +1,5 @@
+<img align="right" alt="NVIDIA Logo" width="25%" src="assets/Nvidia-Logo.png">
+
 # nvtx-rs
 [![dependency status](https://deps.rs/repo/github/simbleau/nvtx-rs/status.svg)](https://deps.rs/repo/github/simbleau/nvtx-rs)
 [![Build Status](https://travis-ci.org/simbleau/nvtx-rs.svg?branch=main)](https://travis-ci.com/simbleau/nvtx-rs)
