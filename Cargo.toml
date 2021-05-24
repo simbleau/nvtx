@@ -8,7 +8,7 @@ repository = "https://github.com/simbleau/nvtx-rs"
 license = "MIT/Apache-2.0"
 categories = ["api-bindings"]
 readme = "README.md"
-exclude = ["assets/*", "examples/*"]
+include = ["NVTX/c/*", "src/*", "build.rs"]
 
 [build-dependencies]
 cc = "1.0"
