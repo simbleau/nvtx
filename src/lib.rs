@@ -6,6 +6,7 @@
 #![warn(rustdoc::broken_intra_doc_links)]
 
 //! A safe rust FFI binding for the NVIDIA® Tools Extension SDK (NVTX).
+//! NVTX API documentation by NVIDIA® can be found via [doxygen](https://nvidia.github.io/NVTX/doxygen/index.html).
 use std::ffi::CString;
 
 // Import the foreign function interface from a C calling convention in nvtx.c
