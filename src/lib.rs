@@ -12,8 +12,8 @@ use std::ffi::CString;
 // Functions exported must match their signature exactly.
 extern "C" {
     #![allow(missing_docs)] // These are external functions with their own documentation
-    pub fn rangePush(message: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
-    pub fn rangePop() -> ::std::os::raw::c_int;
+    fn rangePush(message: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    fn rangePop() -> ::std::os::raw::c_int;
 }
 
 /// Starts a nested thread range.
