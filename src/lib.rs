@@ -12,7 +12,7 @@ use std::ffi::CString;
 // Import the foreign function interface from a C calling convention in nvtx.c
 // Functions exported must match their signature exactly.
 extern "C" {
-    #![allow(missing_docs)] // These are external functions with their own documentation
+    #![doc(hidden)] // Rustdoc should not show unhelpful documentation to the user per Rust API Guidelines
     fn rangePush(message: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
     fn rangePop() -> ::std::os::raw::c_int;
 }
