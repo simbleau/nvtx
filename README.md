@@ -2,7 +2,7 @@
 [![dependency status](https://deps.rs/repo/github/simbleau/nvtx-rs/status.svg)](https://deps.rs/repo/github/simbleau/nvtx-rs)
 [![Build Status](https://travis-ci.com/simbleau/nvtx-rs.svg?branch=main)](https://travis-ci.com/simbleau/nvtx-rs) 
 
-An safe rust wrapper for the NVIDIA® Tools Extension SDK (NVTX). \\
+An safe rust wrapper for the NVIDIA® Tools Extension SDK (NVTX). \
 More information on NVTX can be found via doxygen [here](https://nvidia.github.io/NVTX/doxygen/index.html).
 
 # Motivation
