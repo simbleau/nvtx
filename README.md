@@ -1,8 +1,10 @@
 <img align="right" alt="NVIDIA Logo" width="25%" src="assets/Nvidia-Logo.png">
 
 # nvtx-rs
-[![dependency status](https://deps.rs/repo/github/simbleau/nvtx-rs/status.svg)](https://deps.rs/repo/github/simbleau/nvtx-rs)
+[![Crates.io](https://img.shields.io/crates/v/nvtx-rs)](https://crates.io/crates/nvtx-rs)
+[![Documentation](https://docs.rs/nvtx-rs/badge.svg)](https://docs.rs/nvtx-rs)
 [![Build Status](https://travis-ci.org/simbleau/nvtx-rs.svg?branch=main)](https://travis-ci.com/simbleau/nvtx-rs)
+[![dependency status](https://deps.rs/repo/github/simbleau/nvtx-rs/status.svg)](https://deps.rs/repo/github/simbleau/nvtx-rs)
 
 An safe rust wrapper for the NVIDIA® Tools Extension SDK (NVTX). \
 More information on NVTX can be found via doxygen [here](https://nvidia.github.io/NVTX/doxygen/index.html).
