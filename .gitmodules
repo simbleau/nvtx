@@ -1,0 +1,3 @@
+[submodule "nvtx-sys/NVTX"]
+	path = nvtx-sys/NVTX
+	url = https://github.com/NVIDIA/NVTX/
