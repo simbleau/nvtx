@@ -4,6 +4,9 @@ Marks are used to describe events at a specific time during the execution of a r
 
 They are visible in the events of the NVTX trace in programs such as NVIDIA NSight Systems.
 
+![Screenshot from 2021-05-24 19-53-17](https://user-images.githubusercontent.com/48108917/119422310-d3585b00-bcce-11eb-976c-7c0771ab3da1.png)
+
+
 # Running the example (NVIDIA NSight Systems)
 
  1. Open NVIDIA NSight Systems
