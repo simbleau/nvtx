@@ -2,6 +2,8 @@
 
 This is a simple example which uses an NVTX "thread range" to time an expensive operation (sleeping 1 second). The thread range is labelled with "Hello, World!".
 
+![Screenshot from 2021-05-24 19-54-07](https://user-images.githubusercontent.com/48108917/119422236-a310bc80-bcce-11eb-960a-ea6e4f681dd8.png)
+
 # Running the example (NVIDIA NSight Systems)
 
  1. Open NVIDIA NSight Systems
