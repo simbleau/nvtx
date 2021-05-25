@@ -26,9 +26,9 @@ The intent is wrap this library safely and in "Rust" fashion to have a proper li
 
 # Getting Started
 
-![Screenshot from 2021-05-23 21-42-13](https://user-images.githubusercontent.com/48108917/119344101-3d3c1a80-bc65-11eb-876e-d5839659c453.png)
+![Screenshot from 2021-05-24 19-54-07](https://user-images.githubusercontent.com/48108917/119422236-a310bc80-bcce-11eb-960a-ea6e4f681dd8.png)
 
-There are several examples in the [example folder](https://github.com/simbleau/nvtx-rs/tree/main/examples) which can be run from applications such as NVIDIA NSight Systems. If you run the application (`cargo run --example hello_world`) in NVIDIA NSight Systems while collecting NVTX trace, you should see a range pushed that says "Hello World!". Examples each come with steps, screenshots, and documentation.
+There are several examples in the [example folder](https://github.com/simbleau/nvtx-rs/tree/main/examples) which can be run from applications such as NVIDIA NSight Systems. Each example has a README with easy to read steps, screenshots, and documentation. Check out the first example, '[Hello, World!](https://github.com/simbleau/nvtx-rs/tree/main/examples/hello_world)'
 
 ## State
 
