@@ -13,7 +13,7 @@ More information on NVTX can be found via doxygen [here](https://nvidia.github.i
 
 NVIDIA® Tools Extension SDK (NVTX) is a C-based Application Programming Interface (API) for annotating events, code ranges, and resources in your applications.
 
-The intent is wrap this library safely and in "rust" fashion to have a proper library for GPU and CPU profiling for it to be used in benchmarking applications.
+The intent is wrap this library safely and in "Rust" fashion to have a proper library for GPU and CPU profiling. Ideally this library would be used in benchmarking applications.
 
 # Sections
 
@@ -28,7 +28,7 @@ The intent is wrap this library safely and in "rust" fashion to have a proper li
 
 ![Screenshot from 2021-05-23 21-42-13](https://user-images.githubusercontent.com/48108917/119344101-3d3c1a80-bc65-11eb-876e-d5839659c453.png)
 
-There are several examples in the [example folder](https://github.com/simbleau/nvtx-rs/tree/main/examples) which can be run systems such as NVIDIA NSight Systems. If you run the application `cargo run --example hello_world` in NVIDIA NSight Systems, you should see the NVTX layer with a range pushed that says "Hello World!". Most examples are straight forward and provide documentation in the file.
+There are several examples in the [example folder](https://github.com/simbleau/nvtx-rs/tree/main/examples) which can be run from applications such as NVIDIA NSight Systems. If you run the application (`cargo run --example hello_world`) in NVIDIA NSight Systems while collecting NVTX trace, you should see a range pushed that says "Hello World!". Examples each come with steps, screenshots, and documentation.
 
 ## State
 
@@ -42,7 +42,7 @@ Don't hesitate to [file an issue](https://github.com/simbleau/nvtx-rs/issues/new
 
 ## Contributing
 
-I encourage all contributions by pull request. A great place to start would be binding more functions and wrapping them in a safe way. I will not accept unsafe functionality unless truly required. FFI handling is tricky, and be aware that there are several inline functions in the NVTX header files. This makes converting them automatically (with tools such as bindgen) more difficult. If you have a good way to do it, I'd love to see it! I ended up going the manual translation route automatic binding was troublesome.
+I encourage all contributions by pull request. Please check the [issues](https://github.com/simbleau/nvtx-rs/issues) first if you'd like to help. Another great place to start would be binding more functions and wrapping them in a safe way. I will not accept unsafe functionality unless truly required. FFI handling is tricky, and be aware that there are several inline functions in the NVTX header files. This makes converting them automatically (with tools such as bindgen) more difficult. If you have a good way to do it, I'd love to see it! I ended up going the manual translation route because automatic binding was troublesome.
 
 The [Rust code of conduct](https://www.rust-lang.org/policies/code-of-conduct) applies.
 

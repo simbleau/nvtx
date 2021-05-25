@@ -5,17 +5,9 @@
 #![warn(rustdoc::invalid_codeblock_attributes)]
 #![warn(rustdoc::broken_intra_doc_links)]
 
-//! A safe rust FFI binding for the NVIDIA® Tools Extension SDK (NVTX).
-//! NVTX API documentation by NVIDIA® can be found via [doxygen](https://nvidia.github.io/NVTX/doxygen/index.html).
+//! A safe rust FFI binding for the NVIDIA® Tools Extension SDK (NVTX). </br>
+//! NVTX API doxygen documentation by NVIDIA® can be found [here](https://nvidia.github.io/NVTX/doxygen/index.html).
 use std::ffi::CString;
-
-// Import the foreign function interface from a C calling convention in nvtx.c
-// Functions exported must match their signature exactly.
-extern "C" {
-    #![doc(hidden)] // Rustdoc should not show unhelpful documentation to the user per Rust API Guidelines
-    fn rangePush(message: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
-    fn rangePop() -> ::std::os::raw::c_int;
-}
 
 /// Starts a nested thread range.
 ///
@@ -36,8 +28,12 @@ extern "C" {
 /// range_pop();
 /// ```
 pub fn range_push(message: &str) -> i32 {
-    let c_message = CString::new(message).expect("CString failure");
-    unsafe { rangePush(c_message.as_ptr()) } // SAFETY: this is safe trust me bro
+    #[link(name = "nvtx")]
+    extern "C" {
+        fn rangePush(message: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+    }
+    let message: CString = str_to_cstring(message);
+    unsafe { rangePush(message.as_ptr()) } // SAFETY: this is safe trust me bro
 }
 
 /// Ends a nested thread range.
@@ -55,5 +51,35 @@ pub fn range_push(message: &str) -> i32 {
 /// range_pop();
 /// ```
 pub fn range_pop() -> i32 {
+    #[link(name = "nvtx")]
+    extern "C" {
+        fn rangePop() -> ::std::os::raw::c_int;
+    }
     unsafe { rangePop() } // SAFETY: this is safe trust me bro
+}
+
+/// Marks an instantaneous event in the application.
+///
+/// # Arguments
+///
+/// * `message` - The message associated to this marker event.
+///
+/// # Examples
+///
+/// ```
+/// use nvtx_rs::{mark};
+/// mark("Operation A");
+/// ```
+pub fn mark(message: &str) {
+    #[link(name = "nvtx")]
+    extern "C" {
+        fn mark(message: *const ::std::os::raw::c_char);
+    }
+    let message: CString = str_to_cstring(message);
+    unsafe { mark(message.as_ptr()) } // SAFETY: this is safe trust me bro
+}
+
+// Helper function to reduce code repetition
+fn str_to_cstring(message: &str) -> CString {
+    return CString::new(message).expect(&format!("Creation of CString failed from {}", message));
 }

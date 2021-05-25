@@ -9,3 +9,5 @@ jobs:
   fast_finish: true
 script:
   - cargo run --example hello_world
+  - cargo run --example mark
+  - cargo run --example thread_range

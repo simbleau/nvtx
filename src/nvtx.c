@@ -12,3 +12,7 @@ int rangePush(const char* message) {
 int rangePop() {
     return nvtxRangePop();
 }
+
+void mark(const char* message) {
+    return nvtxMarkA(message);
+}
