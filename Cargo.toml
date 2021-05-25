@@ -1,6 +1,6 @@
 [package]
 name = "nvtx-rs"
-version = "0.1.0"
+version = "0.11.0"
 authors = ["Spencer Imbleau <spencer@imbleau.com>"]
 edition = "2018"
 description = "Rust bindings for the NVIDIA® Tools Extension SDK (NVTX)"
