@@ -18,11 +18,20 @@ The intent is wrap this library safely and in "Rust" fashion to have a proper li
 # Sections
 
 * [Motivation](#motivation)
+* [Using nvtx-rs](#using-nvtx-rs)
 * [Getting Started](#getting-started)
 * [State](#state)
 * [FAQ](#faq)
 * [Contributing](#contributing)
 * [License](#license)
+
+## Using nvtx-rs
+
+nvtx-rs is designed to be easy to use. The crate is available on [crates.io] and the easiest way to use nvtx-rs is by adding the lone dependency to your `Cargo.toml` file:
+
+```toml
+nvtx-rs = "0.11.0"
+```
 
 # Getting Started
 
