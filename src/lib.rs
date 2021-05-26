@@ -30,10 +30,10 @@ use std::ffi::CString;
 pub fn range_push(message: &str) -> i32 {
     #[link(name = "nvtx")]
     extern "C" {
-        fn rangePush(message: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+        fn _range_push(message: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
     }
     let message: CString = str_to_cstring(message);
-    unsafe { rangePush(message.as_ptr()) } // SAFETY: this is safe trust me bro
+    unsafe { _range_push(message.as_ptr()) } // SAFETY: this is safe trust me bro
 }
 
 /// Ends a nested thread range.
@@ -53,9 +53,9 @@ pub fn range_push(message: &str) -> i32 {
 pub fn range_pop() -> i32 {
     #[link(name = "nvtx")]
     extern "C" {
-        fn rangePop() -> ::std::os::raw::c_int;
+        fn _range_pop() -> ::std::os::raw::c_int;
     }
-    unsafe { rangePop() } // SAFETY: this is safe trust me bro
+    unsafe { _range_pop() } // SAFETY: this is safe trust me bro
 }
 
 /// Marks an instantaneous event in the application.
@@ -73,10 +73,10 @@ pub fn range_pop() -> i32 {
 pub fn mark(message: &str) {
     #[link(name = "nvtx")]
     extern "C" {
-        fn mark(message: *const ::std::os::raw::c_char);
+        fn _mark(message: *const ::std::os::raw::c_char);
     }
     let message: CString = str_to_cstring(message);
-    unsafe { mark(message.as_ptr()) } // SAFETY: this is safe trust me bro
+    unsafe { _mark(message.as_ptr()) } // SAFETY: this is safe trust me bro
 }
 
 // Helper function to reduce code repetition

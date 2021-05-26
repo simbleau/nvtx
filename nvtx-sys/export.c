@@ -5,14 +5,14 @@
  */
 #include "NVTX/c/include/nvtx3/nvToolsExt.h"
 
-int rangePush(const char* message) {
+int _range_push(const char* message) {
     return nvtxRangePushA(message);
 }
 
-int rangePop() {
+int _range_pop() {
     return nvtxRangePop();
 }
 
-void mark(const char* message) {
+void _mark(const char* message) {
     return nvtxMarkA(message);
 }
