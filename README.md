@@ -6,14 +6,16 @@
 [![Build Status](https://travis-ci.org/simbleau/nvtx-rs.svg?branch=main)](https://travis-ci.com/simbleau/nvtx-rs)
 [![dependency status](https://deps.rs/repo/github/simbleau/nvtx-rs/status.svg)](https://deps.rs/repo/github/simbleau/nvtx-rs)
 
-An safe rust wrapper for the NVIDIA® Tools Extension SDK (NVTX). \
-More information on NVTX can be found via doxygen [here](https://nvidia.github.io/NVTX/doxygen/index.html).
+An safe rust wrapper for the NVIDIA® Tools Extension SDK (NVTX).
+
+NVIDIA® Tools Extension SDK (NVTX) is a C-based Application Programming Interface (API) for annotating events, code ranges, and resources in your applications.
+Official documentation for NVIDIA®'s NVTX can be found [here](https://nvidia.github.io/NVTX/doxygen/index.html).
 
 # Motivation
 
-NVIDIA® Tools Extension SDK (NVTX) is a C-based Application Programming Interface (API) for annotating events, code ranges, and resources in your applications.
+The intent is wrap to safely wrap the NVTX library in "Rust" fashion to provide a proper cross-platform library for GPU and CPU profiling. 
 
-The intent is wrap this library safely and in "Rust" fashion to have a proper library for GPU and CPU profiling. Ideally this library would be used in benchmarking applications.
+Ideally this library would be used in benchmarking rust applications and performing research on rust projects such as a GPU analysis with zero-cost abstraction.
 
 # Sections
 
@@ -27,7 +29,7 @@ The intent is wrap this library safely and in "Rust" fashion to have a proper li
 
 ## Using nvtx-rs
 
-nvtx-rs is designed to be easy to use. The crate is available on [crates.io] and the easiest way to use nvtx-rs is by adding the lone dependency to your `Cargo.toml` file:
+nvtx-rs is designed to be easy to use. The crate is published on [crates.io](https://crates.io/crates/nvtx-rs) and the easiest way to use nvtx-rs is by adding the lone dependency to your `Cargo.toml` file:
 
 ```toml
 nvtx-rs = "0.11.0"
@@ -41,7 +43,7 @@ There are several examples in the [example folder](https://github.com/simbleau/n
 
 ## State
 
-nvtx-rs is in active development and still maturing.
+nvtx-rs is in active development and maturing. Right now development is driven by necessity. In the following months I will be performing a GPU analysis and thus will wrap the appropriate (common) functionality one would need or seem important to me.
 
 ## FAQ
 
