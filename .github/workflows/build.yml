@@ -27,6 +27,6 @@ jobs:
       - name: Configuring toolchain
         run: rustup default ${{ matrix.toolchain }}
       - name: Build
-        run: cargo build --target wasm32-unknown-unknown --verbose
+        run: cargo build --verbose
       - name: Run tests
         run: cargo test --verbose
