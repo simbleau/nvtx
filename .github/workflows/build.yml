@@ -20,6 +20,8 @@ jobs:
           - beta
     steps:
       - uses: actions/checkout@v3
+      - name: Pull NVTX submodules
+        run: git submodule update --init --recursive
       - name: Installing toolchain
         run: rustup update ${{ matrix.toolchain }}
       - name: Configuring toolchain
