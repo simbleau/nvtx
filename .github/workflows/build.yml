@@ -15,7 +15,9 @@ jobs:
     strategy:
       matrix:
         toolchain:
+          - stable
           - nightly
+          - beta
     steps:
       - uses: actions/checkout@v3
       - name: Installing toolchain
