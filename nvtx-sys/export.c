@@ -5,14 +5,17 @@
  */
 #include "NVTX/c/include/nvtx3/nvToolsExt.h"
 
-int _range_push(const char* message) {
+int ffi_range_push(const char *message)
+{
     return nvtxRangePushA(message);
 }
 
-int _range_pop() {
+int ffi_range_pop()
+{
     return nvtxRangePop();
 }
 
-void _mark(const char* message) {
+void ffi_mark(const char *message)
+{
     return nvtxMarkA(message);
 }

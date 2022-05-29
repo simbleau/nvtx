@@ -7,6 +7,15 @@
 
 //! A safe rust FFI binding for the NVIDIA® Tools Extension SDK (NVTX). </br>
 //! NVTX API doxygen documentation by NVIDIA® can be found [here](https://nvidia.github.io/NVTX/doxygen/index.html).
+//!
+//! # Examples
+//!
+//! ```
+//! use nvtx_rs::{range_pop, range_push};
+//! range_push("Hello World!");
+//! // <-- Expensive algorithm here
+//! range_pop();
+//! ```
 use std::ffi::CString;
 
 /// Starts a nested thread range.
@@ -17,7 +26,7 @@ use std::ffi::CString;
 ///
 /// # Returns
 ///
-/// * returns the 0 based level of range being started.  If an error occurs a
+/// * returns the 0 based level of range being started. If an error occurs a
 /// negative value is returned.
 ///
 /// # Examples
@@ -30,10 +39,13 @@ use std::ffi::CString;
 pub fn range_push(message: &str) -> i32 {
     #[link(name = "nvtx")]
     extern "C" {
-        fn _range_push(message: *const ::std::os::raw::c_char) -> ::std::os::raw::c_int;
+        fn ffi_range_push(
+            message: *const ::std::os::raw::c_char,
+        ) -> ::std::os::raw::c_int;
     }
     let message: CString = str_to_cstring(message);
-    unsafe { _range_push(message.as_ptr()) } // SAFETY: this is safe trust me bro
+    // SAFETY: If the function signature matches nvtx-sys/export.rs
+    unsafe { ffi_range_push(message.as_ptr()) }
 }
 
 /// Ends a nested thread range.
@@ -53,9 +65,10 @@ pub fn range_push(message: &str) -> i32 {
 pub fn range_pop() -> i32 {
     #[link(name = "nvtx")]
     extern "C" {
-        fn _range_pop() -> ::std::os::raw::c_int;
+        fn ffi_range_pop() -> ::std::os::raw::c_int;
     }
-    unsafe { _range_pop() } // SAFETY: this is safe trust me bro
+    // SAFETY: If the function signature matches nvtx-sys/export.rs
+    unsafe { ffi_range_pop() }
 }
 
 /// Marks an instantaneous event in the application.
@@ -73,13 +86,15 @@ pub fn range_pop() -> i32 {
 pub fn mark(message: &str) {
     #[link(name = "nvtx")]
     extern "C" {
-        fn _mark(message: *const ::std::os::raw::c_char);
+        fn ffi_mark(message: *const ::std::os::raw::c_char);
     }
     let message: CString = str_to_cstring(message);
-    unsafe { _mark(message.as_ptr()) } // SAFETY: this is safe trust me bro
+    // SAFETY: If the function signature matches nvtx-sys/export.rs
+    unsafe { ffi_mark(message.as_ptr()) }
 }
 
-// Helper function to reduce code repetition
+// Helper function to reduce code repetition. Panics if message contains any 0 bytes.
 fn str_to_cstring(message: &str) -> CString {
-    return CString::new(message).expect(&format!("Creation of CString failed from {}", message));
+    return CString::new(message)
+        .expect(&format!("Creation of CString failed from {}", message));
 }
