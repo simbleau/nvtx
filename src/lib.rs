@@ -93,7 +93,8 @@ pub fn mark(message: &str) {
     unsafe { ffi_mark(message.as_ptr()) }
 }
 
-// Helper function to reduce code repetition. Panics if message contains any 0 bytes.
+// Helper function to reduce code repetition. Panics if message contains any 0
+// bytes.
 fn str_to_cstring(message: &str) -> CString {
     return CString::new(message)
         .expect(&format!("Creation of CString failed from {}", message));

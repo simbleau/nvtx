@@ -1,4 +1,5 @@
-/// Build script to compile the exported functions for NVIDIA® Tools Extension SDK (NVTX).
+/// Build script to compile the exported functions for NVIDIA® Tools Extension
+/// SDK (NVTX).
 fn main() {
     // Compile the exported functions for NVIDIA® Tools Extension SDK (NVTX).
     // Ensure submodules are initialized.
