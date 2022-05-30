@@ -62,3 +62,23 @@ macro_rules! range_pop {
         $crate::__private::_range_pop()
     };
 }
+
+/// Annotate an OS thread with a name.
+///
+/// # Examples
+///
+/// ```
+/// use std::thread;
+/// use nvtx_rs::{name_thread};
+/// name_thread!("Thread 1");
+/// let handler = thread::spawn(|| {
+///    name_thread!("Thread 2");
+/// });
+/// handler.join().unwrap();
+/// ```
+#[macro_export]
+macro_rules! name_thread {
+    ($($tt:tt)*) => {
+        $crate::__private::_name_thread(::core::format_args!($($tt)*))
+    };
+}

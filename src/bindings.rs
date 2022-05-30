@@ -36,3 +36,15 @@ pub fn _mark<M: Display>(message: M) {
     // SAFETY: If the function signature matches nvtx-sys/export.rs
     unsafe { ffi_mark(message.as_ptr()) }
 }
+
+#[doc(hidden)]
+pub fn _name_thread<M: Display>(name: M) {
+    #[link(name = "nvtx")]
+    extern "C" {
+        fn ffi_name_thread(name: *const ::std::os::raw::c_char);
+    }
+    let name: CString =
+        CString::new(name.to_string()).expect("Invalid thread name");
+    // SAFETY: If the function signature matches nvtx-sys/export.rs
+    unsafe { ffi_name_thread(name.as_ptr()) }
+}
