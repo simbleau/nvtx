@@ -4,7 +4,7 @@ Thread ranges are used to describe events over a time span during the execution 
 
 They are visible in the events of the NVTX trace in programs such as NVIDIA NSight Systems.
 
-![Screenshot from 2021-05-24 19-55-37](https://user-images.githubusercontent.com/48108917/119422353-e834ee80-bcce-11eb-9b4b-005e53f72ed2.png)
+![Screenshot](screenshot.png)
 
 # Running the example (NVIDIA NSight Systems)
 
