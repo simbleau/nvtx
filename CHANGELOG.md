@@ -5,6 +5,20 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.0] - 2022-05-30
+
+### Added
+
+- Users can now annotate thread names with `name_thread!(...)` to wrap the canonical `nvtxNameOsThread(uint32_t, const *char)` from NVTX.
+
+### Changed
+
+- Nothing
+
+### Fixed
+
+- Nothing
+
 ## [1.0.0] - 2022-05-29
 
 To update, replace your function calls with macros, e.g. `range_push("hello")` becomes `range_push!("hello")`
@@ -15,12 +29,9 @@ To update, replace your function calls with macros, e.g. `range_push("hello")` b
 
 ### Changed
 
-- [range_push](https://github.com/simbleau/nvtx-rs/blob/36dfb8fb27550eece1d3ca23d900e0565f1205c3)
-  The `range_push(&str)` function was changed to `range_push!(...)` which uses argument format capturing similar to the `println!(...)` macro. This is a breaking change.
-- [range_pop](https://github.com/simbleau/nvtx-rs/blob/36dfb8fb27550eece1d3ca23d900e0565f1205c3)
-  The `range_pop()` function was changed to `range_push!()`. This is a breaking change.
-- [mark](https://github.com/simbleau/nvtx-rs/blob/36dfb8fb27550eece1d3ca23d900e0565f1205c3)
-  The `mark(&str)` function was changed to `mark!(...)` which uses argument format capturing similar to the `println!(...)` macro. This is a breaking change.
+- The `range_push(&str)` function was changed to `range_push!(...)` which uses argument format capturing similar to the `println!(...)` macro. This is a breaking change.
+- The `range_pop()` function was changed to `range_push!()`. This is a breaking change.
+- The `mark(&str)` function was changed to `mark!(...)` which uses argument format capturing similar to the `println!(...)` macro. This is a breaking change.
 
 ### Fixed
 
