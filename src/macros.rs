@@ -1,0 +1,64 @@
+/// Marks an instantaneous event in the application.
+///
+/// # Arguments
+///
+/// * `message` - The message associated to this marker event.
+///
+/// # Examples
+///
+/// ```
+/// use nvtx_rs::{mark};
+/// mark!("Operation A");
+/// ```
+#[macro_export]
+macro_rules! mark {
+    ($($tt:tt)*) => {
+        $crate::__private::_mark(::core::format_args!($($tt)*))
+    };
+}
+
+/// Starts a nested thread range.
+///
+/// # Arguments
+///
+/// * `message` - The event message associated to this range event.
+///
+/// # Returns
+///
+/// * returns the 0 based level of range being started. If an error occurs a
+/// negative value is returned.
+///
+/// # Examples
+///
+/// ```
+/// use nvtx_rs::{range_pop, range_push};
+/// range_push!("Hello World!");
+/// range_pop!();
+/// ```
+#[macro_export]
+macro_rules! range_push {
+    ($($tt:tt)*) => {
+        $crate::__private::_range_push(::core::format_args!($($tt)*))
+    };
+}
+
+/// Ends a nested thread range.
+///
+/// # Returns
+///
+/// * returns the level of the range being ended. If an error occurs a negative
+/// value is returned on the current thread.
+///
+/// # Examples
+///
+/// ```
+/// use nvtx_rs::{range_pop, range_push};
+/// range_push!("Hello World!");
+/// range_pop!();
+/// ```
+#[macro_export]
+macro_rules! range_pop {
+    () => {
+        $crate::__private::_range_pop()
+    };
+}
