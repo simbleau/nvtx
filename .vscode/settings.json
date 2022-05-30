@@ -1,0 +1,8 @@
+{
+    "yaml.schemas": {
+        "https://json.schemastore.org/github-workflow.json": [
+            "file:///home/simbleau/git/nvtx/.github/workflows/build.yml",
+            "file:///home/simbleau/git/nvtx/.github/workflows/clippy.yml"
+        ]
+    }
+}
