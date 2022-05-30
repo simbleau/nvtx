@@ -31,7 +31,7 @@ Don't hesitate to [file an issue](https://github.com/simbleau/nvtx/issues/new) i
 
 ## 🤝 Contributing
 
-If you support the project, consider sponsoring. Otherwise, I encourage all contributions by pull request. Please check the [issues](https://github.com/simbleau/nvtx/issues) if you'd like to help. Another great place to start would be binding more functions and wrapping them in a safe way.
+If you support the project, consider [sponsoring](https://github.com/sponsors/simbleau) or [buying a coffee](https://www.buymeacoffee.com/simbleau). Otherwise, I encourage all contributions by pull request. Please check the [issues](https://github.com/simbleau/nvtx/issues) if you'd like to help. Another great place to start would be binding more functions and wrapping them in a safe way.
 
 The [Rust code of conduct](https://www.rust-lang.org/policies/code-of-conduct) applies.
 
