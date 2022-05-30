@@ -13,7 +13,7 @@ They are visible in the events of the NVTX trace in programs such as NVIDIA NSig
  3. Select a target host for profiling (local computer is fine)
  4. Set the target application information to:
     * Command line with arguments: `cargo run --example thread_range`
-    * Set the working directory to the nvtx-rs directory path
+    * Set the working directory to the nvtx directory path
  5. Collect NVTX trace
  6. Start the project (wait for completion)
  7. Open the report
