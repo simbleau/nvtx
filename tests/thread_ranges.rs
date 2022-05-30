@@ -1,5 +1,4 @@
-extern crate nvtx_rs;
-use nvtx_rs::{range_pop, range_push};
+use nvtx::{range_pop, range_push};
 
 #[test]
 fn test_thread_range() {

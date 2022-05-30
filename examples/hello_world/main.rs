@@ -1,7 +1,7 @@
 use std::thread::sleep;
 use std::time::Duration;
 
-use nvtx_rs::{range_pop, range_push};
+use nvtx::{range_pop, range_push};
 
 /// Push a range on the NVTX layer which gets popped after an expensive
 /// operation. </br> This program should be ran from a profiling application

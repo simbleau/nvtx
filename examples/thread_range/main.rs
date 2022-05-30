@@ -1,7 +1,7 @@
 use std::thread::sleep;
 use std::time::Duration;
 
-use nvtx_rs::{range_pop, range_push};
+use nvtx::{range_pop, range_push};
 
 /// Push and pop a thread range on the NVTX layer. </br>
 /// This program should be ran from a profiling application like NVIDIA Nsight

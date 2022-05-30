@@ -12,14 +12,14 @@
 //! # Examples
 //!
 //! ```
-//! use nvtx_rs::{range_pop, range_push};
+//! use nvtx::{range_pop, range_push};
 //! range_push!("Hello World!");
 //! // <-- Expensive algorithm here
 //! range_pop!();
 //! ```
 //!
 //! ```
-//! use nvtx_rs::{mark};
+//! use nvtx::{mark};
 //! mark!("Operation A");
 //! // <-- Expensive algorithm here
 //! mark!("Operation B");
@@ -28,7 +28,7 @@
 //!
 //! ```
 //! use std::thread;
-//! use nvtx_rs::{name_thread};
+//! use nvtx::{name_thread};
 //! name_thread!("Thread 1");
 //! let handler = thread::spawn(|| {
 //!    name_thread!("Thread 2");

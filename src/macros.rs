@@ -7,7 +7,7 @@
 /// # Examples
 ///
 /// ```
-/// use nvtx_rs::{mark};
+/// use nvtx::{mark};
 /// mark!("Operation A");
 /// ```
 #[macro_export]
@@ -31,7 +31,7 @@ macro_rules! mark {
 /// # Examples
 ///
 /// ```
-/// use nvtx_rs::{range_pop, range_push};
+/// use nvtx::{range_pop, range_push};
 /// range_push!("Hello World!");
 /// range_pop!();
 /// ```
@@ -52,7 +52,7 @@ macro_rules! range_push {
 /// # Examples
 ///
 /// ```
-/// use nvtx_rs::{range_pop, range_push};
+/// use nvtx::{range_pop, range_push};
 /// range_push!("Hello World!");
 /// range_pop!();
 /// ```
@@ -69,7 +69,7 @@ macro_rules! range_pop {
 ///
 /// ```
 /// use std::thread;
-/// use nvtx_rs::{name_thread};
+/// use nvtx::{name_thread};
 /// name_thread!("Thread 1");
 /// let handler = thread::spawn(|| {
 ///    name_thread!("Thread 2");

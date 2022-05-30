@@ -1,7 +1,7 @@
 use std::thread::{self};
 use std::time::Duration;
 
-use nvtx_rs::name_thread;
+use nvtx::name_thread;
 
 /// Annotate threads with names. </br> This program should be ran from a
 /// profiling application like NVIDIA Nsight Systems!
