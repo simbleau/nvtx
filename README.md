@@ -6,7 +6,7 @@
 [![Build Status](https://github.com/simbleau/nvtx/workflows/build/badge.svg)](https://github.com/simbleau/nvtx/actions/workflows/build.yml)
 [![dependency status](https://deps.rs/repo/github/simbleau/nvtx/status.svg)](https://deps.rs/repo/github/simbleau/nvtx)
 
-An safe rust wrapper for the NVIDIA® Tools Extension SDK (NVTX) with zero-cost abstraction.
+A safe rust wrapper for the NVIDIA® Tools Extension SDK (NVTX) with zero-cost abstraction.
 
 NVIDIA® Tools Extension SDK (NVTX) is a C-based Application Programming Interface (API) for annotating events, code ranges, and resources in your applications.
 Official documentation for NVIDIA®'s NVTX can be found [here](https://nvidia.github.io/NVTX/doxygen/index.html).
