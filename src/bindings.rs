@@ -1,13 +1,14 @@
-use std::ffi::CString;
-use std::fmt::Display;
+extern crate alloc;
+use alloc::{ffi::CString, string::ToString};
+use core::fmt::Display;
 
 #[doc(hidden)]
 pub fn _range_push<M: Display>(message: M) -> i32 {
     #[link(name = "nvtx")]
     extern "C" {
         fn ffi_range_push(
-            message: *const ::std::os::raw::c_char,
-        ) -> ::std::os::raw::c_int;
+            message: *const ::core::ffi::c_char,
+        ) -> ::core::ffi::c_int;
     }
     let message: CString =
         CString::new(message.to_string()).expect("Invalid thread range name");
@@ -19,7 +20,7 @@ pub fn _range_push<M: Display>(message: M) -> i32 {
 pub fn _range_pop() -> i32 {
     #[link(name = "nvtx")]
     extern "C" {
-        fn ffi_range_pop() -> ::std::os::raw::c_int;
+        fn ffi_range_pop() -> ::core::ffi::c_int;
     }
     // SAFETY: If the function signature matches nvtx-sys/export.rs
     unsafe { ffi_range_pop() }
@@ -29,7 +30,7 @@ pub fn _range_pop() -> i32 {
 pub fn _mark<M: Display>(message: M) {
     #[link(name = "nvtx")]
     extern "C" {
-        fn ffi_mark(message: *const ::std::os::raw::c_char);
+        fn ffi_mark(message: *const ::core::ffi::c_char);
     }
     let message: CString =
         CString::new(message.to_string()).expect("Invalid marker name");
@@ -41,7 +42,7 @@ pub fn _mark<M: Display>(message: M) {
 pub fn _name_thread<M: Display>(name: M) {
     #[link(name = "nvtx")]
     extern "C" {
-        fn ffi_name_thread(name: *const ::std::os::raw::c_char);
+        fn ffi_name_thread(name: *const ::core::ffi::c_char);
     }
     let name: CString =
         CString::new(name.to_string()).expect("Invalid thread name");
