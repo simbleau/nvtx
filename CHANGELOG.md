@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.1.1] - 2022-07-10
+There are no update steps from the previous version.
+### Added
+- Nothing
+### Changed
+- The crate is now `#![no_std]`
+### Fixed
+- Nothing
+
+---
+
 ## [1.1.0] - 2022-05-30
 There are no update steps from the previous version.
 ### Added
