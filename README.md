@@ -1,6 +1,7 @@
 <img align="right" alt="NVIDIA Logo" width="25%" src="assets/Nvidia-Logo.png">
 
 # NVTX
+
 [![Crates.io](https://img.shields.io/crates/v/nvtx)](https://crates.io/crates/nvtx)
 [![Documentation](https://docs.rs/nvtx/badge.svg)](https://docs.rs/nvtx)
 [![Build Status](https://github.com/simbleau/nvtx/workflows/build/badge.svg)](https://github.com/simbleau/nvtx/actions/workflows/build.yml)
@@ -44,4 +45,5 @@ See the [changelog](CHANGELOG.md).
 ---
 
 ## 🔏 License
+
 This project is dual-licensed under both [Apache 2.0](LICENSE-APACHE) and [MIT](LICENSE-MIT) licenses.
