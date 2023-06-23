@@ -63,6 +63,50 @@ macro_rules! range_pop {
     };
 }
 
+/// Starts a range that can occur on a different thread than the end.
+///
+/// # Arguments
+///
+/// * `message` - The event message associated to this range event.
+///
+/// # Returns
+///
+/// * returns the `id` of the range.
+///
+/// # Examples
+///
+/// ```
+/// use nvtx::{range_end, range_start};
+/// let id = range_start!("Hello World!");
+/// range_end!(id);
+/// ```
+#[macro_export]
+macro_rules! range_start{
+    ($($tt:tt)*) => {
+        $crate::__private::_range_start(::core::format_args!($($tt)*))
+    };
+}
+
+/// Ends a range that can occur on a different thread than the start.
+///
+/// # Arguments
+///
+/// * `id` - The event id associated to this range event.
+///
+/// # Examples
+///
+/// ```
+/// use nvtx::{range_end, range_start};
+/// let id = range_start!("Hello World!");
+/// range_end!(id);
+/// ```
+#[macro_export]
+macro_rules! range_end {
+    ($tt:tt) => {
+        $crate::__private::_range_end($tt)
+    };
+}
+
 /// Annotate an OS thread with a name.
 ///
 /// # Examples
