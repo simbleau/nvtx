@@ -6,6 +6,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.2.0] - 2023-07-25
+
+There are no update steps from the previous version.
+
+### Added
+
+- Add macros `range_start!` and `range_end!` from the [NVTX API](https://docs.nvidia.com/nsight-visual-studio-edition/nvtx/index.html#nvtx-library-events-range-start-end).
+
+### Changed
+
+- Nothing
+
+### Fixed
+
+- Nothing
+
 ## [1.1.2] - 2023-07-23
 
 There are no update steps from the previous version.
