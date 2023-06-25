@@ -16,22 +16,6 @@ There are no update steps from the previous version.
 
 ### Changed
 
-- Nothing
-
-### Fixed
-
-- Nothing
-
-## [1.1.2] - 2023-07-23
-
-There are no update steps from the previous version.
-
-### Added
-
-- Nothing
-
-### Changed
-
 - The crate is now using the stable coolchain
 
 ### Fixed
