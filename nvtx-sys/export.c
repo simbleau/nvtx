@@ -39,6 +39,16 @@ int ffi_range_pop()
     return nvtxRangePop();
 }
 
+int ffi_range_start(const char *message)
+{
+    return nvtxRangeStartA(message);
+}
+
+void ffi_range_end(int id)
+{
+    return nvtxRangeEnd(id);
+}
+
 void ffi_mark(const char *message)
 {
     return nvtxMarkA(message);
