@@ -107,6 +107,40 @@ macro_rules! range_end {
     };
 }
 
+/// Starts a range, returning a guard that will end the range when it is dropped.
+///
+/// This is a convenience for calling [`range_start!`] and [`range_end!`], in particular for cases
+/// where a function might exit in multiple places.
+///
+/// # Arguments
+///
+/// * `message` - The event message associated to this range event.
+///
+/// # Returns
+///
+/// * returns a [`RangeGuard`](crate::RangeGuard) which will end the range when it goes out of
+/// scope.
+///
+/// # Examples
+///
+/// ```
+/// # let some_condition = true;
+/// use nvtx::range;
+/// let _range = range!("Hello World!");
+///
+/// // The range will end regardless of which branch is taken.
+/// if some_condition {
+///     return;
+/// }
+/// ```
+#[macro_export]
+macro_rules! range {
+    ($($tt:tt)*) => {{
+        let id = $crate::range_start!($($tt)*);
+        $crate::RangeGuard(id)
+    }};
+}
+
 /// Annotate an OS thread with a name.
 ///
 /// # Examples
