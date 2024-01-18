@@ -19,6 +19,13 @@
 //! ```
 //!
 //! ```
+//! use nvtx::range;
+//! let range = range!("Hello World!");
+//! // <-- Expensive algorithm here
+//! drop(range);
+//! ```
+//!
+//! ```
 //! use nvtx::{mark};
 //! mark!("Operation A");
 //! // <-- Expensive algorithm here
@@ -43,3 +50,14 @@ pub mod __private {
 
 mod macros;
 pub use macros::*;
+
+/// A guard object representing an open NVTX range. Construct it using the [`range!`] macro. When it
+/// goes out of scope it will call [`range_end!`].
+pub struct RangeGuard(#[doc(hidden)] pub i32);
+
+impl Drop for RangeGuard {
+    fn drop(&mut self) {
+        let id = self.0;
+        range_end!(id);
+    }
+}
